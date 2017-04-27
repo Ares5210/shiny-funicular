@@ -8,13 +8,12 @@
  */
 
 // 模式 [true 正常 | false 认证]
-define('TYPE', false);
+define('TYPE', true);
 
 // 配置文件
 $config = require(__DIR__ . './config/WConst.php');
 
 // 引入文件
-require(__DIR__ . './comm/autoload.php');
-require(__DIR__ . './comm/Action.php');
+require(__DIR__ . './autoload.php');
 
 (new \comm\Action())->run();

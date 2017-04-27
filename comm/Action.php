@@ -17,10 +17,10 @@ class Action{
      */
     public function run()
     {
-        if (!TYPE) {
+        if (!TYPE) { // 认证模式
             $this->execute = new \logic\AuthLogic();
-        } else {
-
+        } else { // 开发模式
+            $this->execute = new \logic\WechatLogic();
         }
 
         return $this->execute->run();

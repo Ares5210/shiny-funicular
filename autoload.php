@@ -10,7 +10,8 @@ class Autoload
 {
     public static function getFile($class)
     {
-        $file = (__FILE__) . $class . ".php";
+        $class = explode('\\',$class);
+        $file = (__DIR__) . DIRECTORY_SEPARATOR . $class[0] . DIRECTORY_SEPARATOR . $class[1] . ".php";
         if (file_exists($file)) {
             require $file;
         }

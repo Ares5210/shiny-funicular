@@ -24,7 +24,12 @@ class AuthLogic extends WLogic
         $signature = $this->request->get('signature', '');
         $timestamp = $this->request->get('timestamp', '');
         $nonce = $this->request->get('nonce', '');
-        return Functions::checkSignature($signature, $timestamp, $nonce);
+        $echostr = $this->request->get('echostr', '');
+        // 检测成功
+        if(Functions::checkSignature($signature, $timestamp, $nonce)){
+            echo $echostr;
+            exit;
+        }
     }
 
 }

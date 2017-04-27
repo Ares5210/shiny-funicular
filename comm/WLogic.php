@@ -11,6 +11,7 @@ namespace comm;
 class WLogic{
 
     public $request = null;
+    public $accessToken = null;
 
     public function __construct()
     {
